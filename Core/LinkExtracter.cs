@@ -15,9 +15,9 @@ public static class LinkExtracter
             string value = link.Attributes["href"].Value;
             if (value != "#")
             {
-                if (value.Contains(domain))
+                if (value.Contains(domain) && !list.Contains(value))
                     list.Add(value);
-                else if (!value.Contains("http"))
+                else if (!value.Contains("http") && !list.Contains(domain + value))
                     list.Add(domain + value);
             }
         }

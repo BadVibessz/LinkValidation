@@ -1,8 +1,3 @@
-link: http://primat.org/javascript:;, status:  (404) Not Found.
-link: http://primat.org/javascript:;, status:  (404) Not Found.
-link: http://primat.org//, status:  (404) Not Found.
-link: http://primat.org/javascript://, status:  (404) Not Found.
-link: http://primat.org//, status:  (404) Not Found.
-link: http://primat.org/javascript://, status:  (404) Not Found.
-link: http://primat.org/javascript:;, status:  (404) Not Found.
-link: http://primat.org/javascript://, status:  (404) Not Found.
+link: http://links.qatl.ru/links/502gateaway502.php, status:  (502) Bad Gateway.
+link: http://links.qatl.ru/links/access401unauthorized.php, status:  (401) Unauthorized.
+link: http://links.qatl.ru/links/deny403forbidden.php, status:  (403) Forbidden.
