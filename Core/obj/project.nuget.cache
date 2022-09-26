@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CrXTPEL46h6Qsi6TPIKO7NNc3RrhQFpvzz3/WdN8enXY29RbXE3Bjks50ph3zHzH2uc2A0+td1dkEuahbDRBew==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\danil\\source\\repos\\LinkValidationLW\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danil\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512"
+  ],
+  "logs": []
+}

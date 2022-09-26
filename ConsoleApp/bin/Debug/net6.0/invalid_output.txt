@@ -1,0 +1,8 @@
+link: http://primat.org/javascript:;, status:  (404) Not Found.
+link: http://primat.org/javascript:;, status:  (404) Not Found.
+link: http://primat.org//, status:  (404) Not Found.
+link: http://primat.org/javascript://, status:  (404) Not Found.
+link: http://primat.org//, status:  (404) Not Found.
+link: http://primat.org/javascript://, status:  (404) Not Found.
+link: http://primat.org/javascript:;, status:  (404) Not Found.
+link: http://primat.org/javascript://, status:  (404) Not Found.
