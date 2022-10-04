@@ -1,5 +1,12 @@
-link: http://links.qatl.ru/links/502gateaway502.php, status:  (502) Bad Gateway.
-link: http://links.qatl.ru/links/access401unauthorized.php, status:  (401) Unauthorized.
-link: http://links.qatl.ru/links/deny403forbidden.php, status:  (403) Forbidden.
-Link count: 3
-Execution date: 4 октября 2022 г. 17:19
+link: http://links.qatl.ru/links/locked.php, status: 423
+link: http://links.qatl.ru/tel://1234567920, status: 403
+link: http://links.qatl.ru/mailto:info@yoursite.com, status: 403
+link: http://links.qatl.ru/links/404not404found404.php, status: 404
+link: http://links.qatl.ru/links/return500bad.php, status: 500
+link: http://links.qatl.ru/links/deny403forbidden.php, status: 403
+link: http://links.qatl.ru/links/502gateaway502.php, status: 502
+link: http://links.qatl.ru/links/teapot418.php, status: 500
+link: http://links.qatl.ru/links/un503availible.php, status: 503
+link: http://links.qatl.ru/links/access401unauthorized.php, status: 401
+Link count: 10
+Execution date: 4 октября 2022 г. 21:55

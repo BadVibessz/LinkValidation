@@ -17,16 +17,20 @@ public static class UrlValidator
             response = request.GetResponse();
 
             if (response is HttpWebResponse)
-                pageState.StatusCode = ((HttpWebResponse)response).StatusCode.ToString();
+                pageState.StatusCode = (int)((HttpWebResponse)response).StatusCode;
             else if (response is FileWebResponse)
-                pageState.StatusCode = HttpStatusCode.OK.ToString();
+                pageState.StatusCode = (int)HttpStatusCode.OK;
 
-            if (pageState.StatusCode.Equals(HttpStatusCode.OK.ToString()))
+            if (pageState.StatusCode < 400)
                 pageState.ProcessSuccessful = true;
         }
-        catch (Exception ex)
+        catch (WebException ex)
         {
-            pageState.StatusCode = ex.Message.Split(':').Last();
+            var status = ((ex.Response as HttpWebResponse)?.StatusCode).Value;
+            pageState.StatusCode = (int)status;
+
+            if ((int)status < 400)
+                pageState.ProcessSuccessful = true;
         }
         finally
         {

@@ -1,10 +1,13 @@
-link: http://links.qatl.ru/index.html, status: OK
-link: http://links.qatl.ru/about.html, status: OK
-link: http://links.qatl.ru/work.html, status: OK
-link: http://links.qatl.ru/pricing.html, status: OK
-link: http://links.qatl.ru/blog.html, status: OK
-link: http://links.qatl.ru/contact.html, status: OK
-link: http://links.qatl.ru/, status: OK
-link: http://links.qatl.ru/blog-single.html, status: OK
-Link count: 8
-Execution date: 4 октября 2022 г. 17:19
+link: http://links.qatl.ru/, status: 200
+link: http://links.qatl.ru/index.html, status: 200
+link: http://links.qatl.ru/about.html, status: 200
+link: http://links.qatl.ru/work.html, status: 200
+link: http://links.qatl.ru/pricing.html, status: 200
+link: http://links.qatl.ru/blog.html, status: 200
+link: http://links.qatl.ru/links/movedper.php, status: 301
+link: http://links.qatl.ru/contact.html, status: 200
+link: http://links.qatl.ru/blog-single.html, status: 200
+link: http://links.qatl.ru/links/found302.php, status: 302
+link: http://links.qatl.ru/links/no204content.php, status: 204
+Link count: 11
+Execution date: 4 октября 2022 г. 21:55

@@ -4,7 +4,8 @@ const string pathToValidOutput = "valid_output.txt";
 const string pathToInvalidOutput = "invalid_output.txt";
 const string Uri = "http://links.qatl.ru/";
 
-var links = LinkExtracter.ExtractAllLinks(Uri);
+var links = new List<string>();
+LinkExtracter.ExtractLinksFromPage(Uri, links);
 
 var pages = links.Select(l => new WebPageState(l));
 
