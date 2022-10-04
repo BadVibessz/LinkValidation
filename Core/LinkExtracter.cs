@@ -13,13 +13,13 @@ public static class LinkExtracter
         foreach (var link in doc.DocumentNode.SelectNodes("//a[@href]"))
         {
             string value = link.Attributes["href"].Value;
-            if (value != "#")
-            {
-                if (value.Contains(domain) && !list.Contains(value))
-                    list.Add(value);
-                else if (!value.Contains("http") && !list.Contains(domain + value))
-                    list.Add(domain + value);
-            }
+
+            if (value == "#") value = String.Empty;
+            
+            if (value.Contains(domain) && !list.Contains(value))
+                list.Add(value);
+            else if (!value.Contains("http") && !list.Contains(domain + value))
+                list.Add(domain + value);
         }
 
         return list;

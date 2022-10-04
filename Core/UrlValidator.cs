@@ -6,7 +6,7 @@ public static class UrlValidator
 {
     public static bool Validate(WebPageState pageState)
     {
-        pageState.ProcessSuccessfull = false;
+        pageState.ProcessSuccessful = false;
 
         var request = (HttpWebRequest)WebRequest.Create(pageState.Uri);
         request.Method = "GET";
@@ -22,7 +22,7 @@ public static class UrlValidator
                 pageState.StatusCode = HttpStatusCode.OK.ToString();
 
             if (pageState.StatusCode.Equals(HttpStatusCode.OK.ToString()))
-                pageState.ProcessSuccessfull = true;
+                pageState.ProcessSuccessful = true;
         }
         catch (Exception ex)
         {
@@ -34,6 +34,6 @@ public static class UrlValidator
                 response.Close();
         }
 
-        return pageState.ProcessSuccessfull;
+        return pageState.ProcessSuccessful;
     }
 }

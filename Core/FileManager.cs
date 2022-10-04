@@ -2,7 +2,7 @@
 
 public static class FileManager
 {
-    public static void WriteLineIntoFile(string filename, List<string> lines)
+    public static void WriteLinesIntoFile(string filename, List<string> lines)
     {
         try
         {
@@ -10,7 +10,6 @@ public static class FileManager
             foreach (var line in lines)
                 writer.WriteLine(line);
             writer.Flush();
-            
         }
         catch (Exception e)
         {

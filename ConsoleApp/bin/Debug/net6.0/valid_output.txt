@@ -4,4 +4,7 @@ link: http://links.qatl.ru/work.html, status: OK
 link: http://links.qatl.ru/pricing.html, status: OK
 link: http://links.qatl.ru/blog.html, status: OK
 link: http://links.qatl.ru/contact.html, status: OK
+link: http://links.qatl.ru/, status: OK
 link: http://links.qatl.ru/blog-single.html, status: OK
+Link count: 8
+Execution date: 4 октября 2022 г. 17:19

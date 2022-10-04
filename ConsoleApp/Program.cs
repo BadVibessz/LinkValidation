@@ -17,5 +17,8 @@ foreach (var page in pages)
     else invalidOutput.Add($"link: {page.Uri}, status: {page.StatusCode}");
 }
 
-FileManager.WriteLineIntoFile(pathToValidOutput, validOutput);
-FileManager.WriteLineIntoFile(pathToInvalidOutput, invalidOutput);
+validOutput.Add($"Link count: {validOutput.Count}\nExecution date: {DateTime.Now.ToString("f")}");
+invalidOutput.Add($"Link count: {invalidOutput.Count}\nExecution date: {DateTime.Now.ToString("f")}");
+
+FileManager.WriteLinesIntoFile(pathToValidOutput, validOutput);
+FileManager.WriteLinesIntoFile(pathToInvalidOutput, invalidOutput);
