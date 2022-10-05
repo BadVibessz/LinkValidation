@@ -5,15 +5,15 @@ namespace Core;
 
 public static class LinkExtracter
 {
+    public static Uri BaseUri { get; set; }
+
     public static void ExtractLinksFromPage(string uri, List<string> list)
     {
-        string domain = new Uri(uri).GetLeftPart(UriPartial.Authority) + "/";
-
         if (list.Count == 0)
             list.Add(uri);
 
         var nodes = new HtmlWeb().Load(uri).DocumentNode.SelectNodes("//a[@href]");
-        
+
         if (nodes is not null)
             foreach (var link in nodes)
             {
@@ -23,21 +23,14 @@ public static class LinkExtracter
 
                     if (value != "#")
                     {
-                        Uri temp;
-                        if (value.Contains(domain) && !list.Contains(value))
-                        {
-                            list.Add(value);
-                            ExtractLinksFromPage(value, list);
-                        }
-
-                        else if (!value.Contains("http") && !list.Contains(domain + value))
-                        {
-                            list.Add(domain + value);
-                            ExtractLinksFromPage(domain + value, list);
-                        }
+                        if (Uri.TryCreate(BaseUri, value, out Uri? temp))
+                            if (!list.Contains(temp.ToString()) && temp.Host == BaseUri.Host)
+                            {
+                                list.Add(temp.ToString());
+                                ExtractLinksFromPage(temp.ToString(), list);
+                            }
                     }
                 }
             }
     }
-    
 }
