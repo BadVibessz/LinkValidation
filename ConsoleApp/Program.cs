@@ -1,12 +1,15 @@
 ﻿using Core;
 
+Console.WriteLine("Program started...");
+
 const string pathToValidOutput = "valid_output.txt";
 const string pathToInvalidOutput = "invalid_output.txt";
-const string Uri = "http://links.qatl.ru/";
+const string uri = "https://tortishnaya.ru/";
 
 var links = new List<string>();
-LinkExtracter.BaseUri = new Uri(Uri);
-LinkExtracter.ExtractLinksFromPage(Uri, links);
+
+LinkExtracter.BaseUri = new Uri(uri);
+LinkExtracter.ExtractLinksFromPage(uri, links);
 
 var pages = links.Select(l => new WebPageState(l));
 
@@ -24,3 +27,5 @@ invalidOutput.Add($"Link count: {invalidOutput.Count}\nExecution date: {DateTime
 
 FileManager.WriteLinesIntoFile(pathToValidOutput, validOutput);
 FileManager.WriteLinesIntoFile(pathToInvalidOutput, invalidOutput);
+
+Console.WriteLine("Program finished...");

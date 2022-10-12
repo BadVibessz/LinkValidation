@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Net;
 using HtmlAgilityPack;
 
 namespace Core;
@@ -12,7 +12,17 @@ public static class LinkExtracter
         if (list.Count == 0)
             list.Add(uri);
 
-        var nodes = new HtmlWeb().Load(uri).DocumentNode.SelectNodes("//a[@href]");
+
+        var page = new HtmlWeb()
+        {
+            PreRequest = request =>
+            {
+                request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+                return true;
+            }
+        }.Load(uri);
+
+        var nodes = page.DocumentNode.SelectNodes("//a[@href]");
 
         if (nodes is not null)
             foreach (var link in nodes)
@@ -24,7 +34,9 @@ public static class LinkExtracter
                     if (value != "#")
                     {
                         if (Uri.TryCreate(BaseUri, value, out Uri? temp))
-                            if (!list.Contains(temp.ToString()) && temp.Host == BaseUri.Host)
+                            if (!list.Contains(temp.ToString())
+                                && temp.Host == BaseUri.Host
+                                && (temp.ToString().Last() != '/' && !list.Contains(temp.ToString() + '/')))
                             {
                                 list.Add(temp.ToString());
                                 ExtractLinksFromPage(temp.ToString(), list);

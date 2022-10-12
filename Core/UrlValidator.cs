@@ -10,6 +10,11 @@ public static class UrlValidator
 
         var request = (HttpWebRequest)WebRequest.Create(pageState.Uri);
         request.Method = "GET";
+        request.Credentials = CredentialCache.DefaultCredentials;
+        
+        // Ignore Certificate validation failures (aka untrusted certificate + certificate chains)
+        ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true); 
+        
         WebResponse? response = null;
 
         try
